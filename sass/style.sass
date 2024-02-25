@@ -1,0 +1,89 @@
+$primary-color: #111111
+$light-gray: #A5A5A5
+$dark-gray: #333333
+$yellow: #F89B10
+$white: #FFFFFF
+$black: #000000
+
+@font-face 
+    font-family: "Roboto"
+    src: url(../fonts/Roboto-Thin.ttf)
+    font-display: swap
+    font-weight: 100
+    font-style: normal
+
+@font-face 
+    font-family: "Roboto"
+    src: url(../fonts/Roboto-Medium.ttf)
+    font-display: swap
+    font-weight: 500
+    font-style: normal
+
+@font-face 
+    font-family: "Roboto"
+    src: url(../fonts/Roboto-Regular.ttf)
+    font-display: swap
+    font-weight: 600
+    font-style: normal
+
+*
+    box-sizing: border-box
+
+.container
+    // border: 2px solid red
+.col
+    background-color: $primary-color
+    color: $white
+    // border: 2px solid green
+    &-screen
+        border-radius: 7px 0 0 7px
+    &-calc
+        border-radius: 0 7px 7px 0
+
+.list-group
+    padding: 6px 
+    &-item
+        text-align: right
+        color: $white
+        background-color: $dark-gray
+
+.form-control:disabled
+    height: 
+    font-family: "Roboto"
+    font-weight: 100
+    font-size: 73px
+    text-align: right
+    color: $white
+    background-color: $primary-color
+    border: 0
+
+.btn
+    &-calc  
+        padding: 0
+        margin: 0
+        border-radius: 50px
+        height: 68px
+        width: 68px
+        font-family: "Roboto"
+        font-weight: 500
+        font-size: 26px
+    &-operator
+        background-color: $yellow
+        color: $white
+        font-family: "Roboto"
+        font-weight: 600
+    &-num
+        background-color: $dark-gray
+        color: $white
+        border-color: $dark-gray
+    &-zero
+        width: 148px
+        border-radius: 45px
+        text-align: left
+    &-second-operator
+        background-color: $light-gray
+        color: $black
+        
+.mfm
+    margin: 0
+    padding-left: 19px

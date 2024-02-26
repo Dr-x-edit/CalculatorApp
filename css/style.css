@@ -56,7 +56,9 @@
 }
 
 /* line 50, ../JS/CalculatorApp/sass/style.sass */
-.form-control:disabled {
+.form-control {
+  height: 100px;
+  width: 350px;
   font-family: "Roboto";
   font-weight: 100;
   font-size: 73px;
@@ -64,9 +66,10 @@
   color: #FFFFFF;
   background-color: #111111;
   border: 0;
+  margin: 0;
 }
 
-/* line 61, ../JS/CalculatorApp/sass/style.sass */
+/* line 65, ../JS/CalculatorApp/sass/style.sass */
 .btn-calc {
   padding: 0;
   margin: 0;
@@ -78,37 +81,44 @@
   font-size: 26px;
 }
 
-/* line 70, ../JS/CalculatorApp/sass/style.sass */
+/* line 74, ../JS/CalculatorApp/sass/style.sass */
 .btn-operator {
   background-color: #F89B10;
+  border-color: #F89B10;
   color: #FFFFFF;
   font-family: "Roboto";
   font-weight: 600;
 }
 
-/* line 75, ../JS/CalculatorApp/sass/style.sass */
+/* line 80, ../JS/CalculatorApp/sass/style.sass */
 .btn-num {
   background-color: #333333;
-  color: #FFFFFF;
   border-color: #333333;
+  color: #FFFFFF;
+  margin-right: 13px;
 }
 
-/* line 79, ../JS/CalculatorApp/sass/style.sass */
+/* line 85, ../JS/CalculatorApp/sass/style.sass */
 .btn-zero {
   width: 148px;
   border-radius: 45px;
   text-align: left;
 }
 
-/* line 83, ../JS/CalculatorApp/sass/style.sass */
+/* line 89, ../JS/CalculatorApp/sass/style.sass */
 .btn-second-operator {
   background-color: #A5A5A5;
+  border-color: #A5A5A5;
   color: #000000;
+  margin-right: 13px;
 }
 
-/* line 87, ../JS/CalculatorApp/sass/style.sass */
-.mfm {
+/* line 96, ../JS/CalculatorApp/sass/style.sass */
+.zero {
   margin: 0;
+  height: 68px;
+  width: 148px;
+  border-radius: 45px;
   padding-left: 19px;
 }
 

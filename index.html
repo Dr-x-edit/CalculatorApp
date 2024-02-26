@@ -23,8 +23,8 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col col-screen col-md-8">
-          <ul class="list-group">
+        <div class="col col-screen col-md-8 d-flex align-items-end">
+          <ul class="list-group flex-fill">
             <li class="list-group-item">An item</li>
             <li class="list-group-item">A second item</li>
             <li class="list-group-item">A third item</li>
@@ -32,177 +32,105 @@
             <li class="list-group-item">And a fifth one</li>
           </ul>
         </div>
+
         <div class="col col-calc col-md-4">
-          <input
-            class="form-control mb-2 d-flex align-items-end"
+          <div id="form-control" class="container form-control">52</div>
+          <!-- <input
+            id="form-control"
+            class="form-control d-flex align-items-end"
             type="text"
             value="52"
             aria-label="Disabled input example"
             disabled
             readonly
-          />
+          /> -->
           <div class="container calc-container pt-3">
-            <div class="row row-1 mb-3">
-              <div class="col d-flex justify-content-center gx-0">
+            <!-- prettier-ignore -->
+            <div class="row row-1 mb-3 d-flex justify-content-center">
                 <button
                   type="button"
                   class="btn btn-calc btn-secondary btn-second-operator"
-                >
-                  AC
-                </button>
-              </div>
-              <div class="col d-flex justify-content-center gx-0">
+                >AC</button>
                 <button
                   type="button"
                   class="btn btn-calc btn-secondary btn-second-operator"
-                >
-                  +/-
-                </button>
-              </div>
-              <div class="col d-flex justify-content-center gx-0">
+                >+/-</button>
                 <button
                   type="button"
                   class="btn btn-calc btn-secondary btn-second-operator"
-                >
-                  %
-                </button>
-              </div>
-              <div class="col d-flex justify-content-center gx-0">
+                >%</button>
                 <button
                   type="button"
                   class="btn btn-calc btn-secondary btn-operator"
-                >
-                  /
-                </button>
+                >/</button>
               </div>
+            <div class="row row-2 mb-3 d-flex justify-content-center">
+              <button type="button" class="btn btn-calc btn-secondary btn-num">
+                7
+              </button>
+              <button type="button" class="btn btn-calc btn-secondary btn-num">
+                8
+              </button>
+              <button type="button" class="btn btn-calc btn-secondary btn-num">
+                9
+              </button>
+              <button
+                type="button"
+                class="btn btn-calc btn-secondary btn-operator"
+              >
+                X
+              </button>
             </div>
-            <div class="row row-2 mb-3">
-              <div class="col d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-num"
-                >
-                  7
-                </button>
-              </div>
-              <div class="col d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-num"
-                >
-                  8
-                </button>
-              </div>
-              <div class="col d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-num"
-                >
-                  9
-                </button>
-              </div>
-              <div class="col d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-operator"
-                >
-                  X
-                </button>
-              </div>
+            <div class="row row-3 mb-3 d-flex justify-content-center">
+              <button type="button" class="btn btn-calc btn-secondary btn-num">
+                4
+              </button>
+              <button type="button" class="btn btn-calc btn-secondary btn-num">
+                5
+              </button>
+              <button type="button" class="btn btn-calc btn-secondary btn-num">
+                6
+              </button>
+              <button
+                type="button"
+                class="btn btn-calc btn-secondary btn-operator"
+              >
+                -
+              </button>
             </div>
-            <div class="row row-3 mb-3">
-              <div class="col d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-num"
-                >
-                  4
-                </button>
-              </div>
-              <div class="col d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-num"
-                >
-                  5
-                </button>
-              </div>
-              <div class="col d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-num"
-                >
-                  6
-                </button>
-              </div>
-              <div class="col d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-operator"
-                >
-                  -
-                </button>
-              </div>
+            <div class="row row-4 mb-3 d-flex justify-content-center">
+              <button type="button" class="btn btn-calc btn-secondary btn-num">
+                1
+              </button>
+              <button type="button" class="btn btn-calc btn-secondary btn-num">
+                2
+              </button>
+              <button type="button" class="btn btn-calc btn-secondary btn-num">
+                3
+              </button>
+              <button
+                type="button"
+                class="btn btn-calc btn-secondary btn-operator"
+              >
+                +
+              </button>
             </div>
-            <div class="row row-4 mb-3">
-              <div class="col d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-num"
-                >
-                  1
-                </button>
-              </div>
-              <div class="col d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-num"
-                >
-                  2
-                </button>
-              </div>
-              <div class="col d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-num"
-                >
-                  3
-                </button>
-              </div>
-              <div class="col d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-operator"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-            <div class="row row-5 mb-3">
-              <div class="col-6 d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-num btn-zero"
-                >
-                  <p class="mfm">0</p>
-                </button>
-              </div>
-              <div class="col-3 d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-num"
-                >
-                  .
-                </button>
-              </div>
-              <div class="col-3 d-flex justify-content-center gx-0">
-                <button
-                  type="button"
-                  class="btn btn-calc btn-secondary btn-operator"
-                >
-                  =
-                </button>
-              </div>
+            <div class="row row-5 mb-3 d-flex justify-content-center">
+              <button
+                type="button"
+                class="btn btn-calc btn-secondary btn-num btn-zero"
+              >
+                <p class="zero d-flex align-items-center">0</p>
+              </button>
+              <button type="button" class="btn btn-calc btn-secondary btn-num">
+                .
+              </button>
+              <button
+                type="button"
+                class="btn btn-calc btn-secondary btn-operator"
+              >
+                =
+              </button>
             </div>
           </div>
         </div>

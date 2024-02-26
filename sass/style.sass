@@ -47,8 +47,9 @@ $black: #000000
         color: $white
         background-color: $dark-gray
 
-.form-control:disabled
-    height: 
+.form-control
+    height: 100px
+    width: 350px
     font-family: "Roboto"
     font-weight: 100
     font-size: 73px
@@ -56,6 +57,9 @@ $black: #000000
     color: $white
     background-color: $primary-color
     border: 0
+    margin: 0
+
+
 
 .btn
     &-calc  
@@ -69,21 +73,29 @@ $black: #000000
         font-size: 26px
     &-operator
         background-color: $yellow
+        border-color: $yellow
         color: $white
         font-family: "Roboto"
         font-weight: 600
     &-num
         background-color: $dark-gray
-        color: $white
         border-color: $dark-gray
+        color: $white
+        margin-right: 13px
     &-zero
         width: 148px
         border-radius: 45px
         text-align: left
     &-second-operator
         background-color: $light-gray
+        border-color: $light-gray
         color: $black
+        margin-right: 13px
+
         
-.mfm
+.zero
     margin: 0
+    height: 68px
+    width: 148px
+    border-radius: 45px
     padding-left: 19px

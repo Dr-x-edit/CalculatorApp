@@ -16,67 +16,104 @@ const historyList = document.querySelector(".list-group");
 
 ////////////////// work space //////////////////
 
-// console.log(btns);
-
-// console.log(calcConteiner);
-
-// console.log(calcDisplay);
-
 class CalcApp {
-  result;
-  event;
+  _fristVariable;
+  _secondVariable;
+  _operator;
+  _result;
+  _input;
   constructor(calcConteiner, calcDisplay, historyList) {
     this.clearDisplay();
 
-    calcConteiner.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (
-        e.target.classList.contains("btn-calc") ||
-        e.target.classList.contains("zero")
-      ) {
-        const input = e.target.firstChild.textContent.trim();
-        // console.log(input === "AC");
-        if (input === "AC" && calcDisplay.textContent === "0") {
-          console.log(input === "AC" && calcDisplay.textContent === "0");
-          historyList.innerHTML = "";
-        } else if (input === "AC") {
-          this.clearDisplay();
-        } else if (input === ".") {
-          calcDisplay.insertAdjacentText("beforeend", ",");
-        } else if (input === "X") {
-          calcDisplay.insertAdjacentText("beforeend", "*");
-        } else if (input === "=") {
-          this.getDisplayData();
-          // this.addNumberToScreen();
-        } else {
-          this.addNumberToScreen(input);
-        }
-
-        // console.log(input);
-      }
-    });
+    calcConteiner.addEventListener("click", this._displayData.bind(this));
   }
+  // Встановлення за замовчуванням 0 на дисплеї калькулятора
   clearDisplay() {
     calcDisplay.innerHTML = "0";
   }
-  addNumberToScreen(input) {
-    if (calcDisplay.textContent === "0") {
+
+  // Відображення, введених користувачем, даних
+  _displayData(e) {
+    e.preventDefault();
+    this.addVariable(e);
+  }
+
+  displayVariable(e, display) {
+    this._input = e.target.firstChild.textContent.trim();
+    if (calcDisplay.textContent === display) {
       calcDisplay.innerHTML = "";
     }
+    calcDisplay.insertAdjacentText("beforeend", this._input);
+  }
+  // Записуємо дані до змінних
 
-    calcDisplay.insertAdjacentText("beforeend", input);
+  addVariable(e, fristVariable, secondVariable, operator) {
+    if (!this._fristVariable && !this._operator) {
+      if (e.target.classList.contains("btn-num")) {
+        this.displayVariable(e, "0");
+      }
+      if (
+        e.target.classList.contains("btn-operator-divide") ||
+        e.target.classList.contains("btn-operator-multiply") ||
+        e.target.classList.contains("btn-operator-add") ||
+        e.target.classList.contains("btn-operator-subtract")
+      ) {
+        this._operator = e.target.firstChild.textContent.trim();
+        this._fristVariable = calcDisplay.textContent;
+
+        console.log(this._operator);
+        console.log(this._fristVariable);
+      }
+    }
+    if (this._fristVariable && this._operator) {
+      calcDisplay.innerHTML = this._fristVariable;
+      console.log(calcDisplay.textContent);
+      this.displayVariable(e, calcDisplay.textContent);
+    }
   }
 
-  getDisplayData() {
-    this.result = calcDisplay.textContent;
-    calcDisplay.innerHTML = eval(this.result);
-    historyList.insertAdjacentHTML(
-      "beforeend",
-      `<li class="list-group-item">${this.result} = ${eval(this.result)}</li>`
-    );
+  // addVariable(e, fristVariable, secondVariable, operator) {
+  //   if (e.target.classList.contains("btn-num")) {
+  //     this._input = e.target.firstChild.textContent.trim();
+  //     if (calcDisplay.textContent === "0") {
+  //       calcDisplay.innerHTML = "";
+  //     }
+  //     calcDisplay.insertAdjacentText("beforeend", this._input);
+  //   }
+  //   if (
+  //     e.target.classList.contains("btn-operator-divide") ||
+  //     e.target.classList.contains("btn-operator-multiply") ||
+  //     e.target.classList.contains("btn-operator-add") ||
+  //     e.target.classList.contains("btn-operator-subtract")
+  //   ) {
+  //     this._operator = e.target.firstChild.textContent.trim();
+  //     this._fristVariable = calcDisplay.textContent;
 
-    console.log(this.result);
-  }
+  //     console.log(this._operator);
+  //     console.log(this._fristVariable);
+  //   }
+  //   if (this._fristVariable && this._operator) {
+  //     calcDisplay.innerHTML = this._fristVariable;
+  //     if (e.target.classList.contains("btn-num")) {
+  //       this._input = e.target.firstChild.textContent.trim();
+  //       if (calcDisplay.textContent === this._fristVariable) {
+  //         calcDisplay.innerHTML = "";
+  //       }
+  //       calcDisplay.insertAdjacentText("beforeend", this._input);
+  //     }
+  //   }
+  // }
+
+  // getDisplayData() {
+  //   this.result = calcDisplay.textContent;
+  //   calcDisplay.innerHTML = eval(this.result);
+  //   historyList.insertAdjacentHTML(
+  //     "beforeend",
+  //     `<li class="list-group-item">${this.result} = ${eval(this.result)}</li>`
+  //   );
+
+  //   console.log(this.result);
 }
+// }
 
 const calculatorApp = new CalcApp(calcConteiner, calcDisplay, historyList);
